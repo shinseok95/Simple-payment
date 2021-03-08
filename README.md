@@ -41,28 +41,28 @@
 
 ### 로그인
 
-<img src="https://user-images.githubusercontent.com/48644958/110317258-3d0d8500-804f-11eb-8408-b6a0c23f69be.png" height="40%" width="40%"></img>
+<img src="https://user-images.githubusercontent.com/48644958/110317258-3d0d8500-804f-11eb-8408-b6a0c23f69be.png" height="30%" width="30%"></img><br>
 
 - DB에 저장된 사용자 인증 Token을 받아와서, 오픈 뱅킹 서비스를 제공합니다. <br>
 
 ### 회원가입
 
 <div>
-<img src="https://user-images.githubusercontent.com/48644958/110317292-48f94700-804f-11eb-9747-926233f42b51.png" height="40%" width="40%"></img>
-<img src="https://user-images.githubusercontent.com/48644958/110317297-4ac30a80-804f-11eb-9521-3df903b2a982.png" height="40%" width="40%"></img>
+<img src="https://user-images.githubusercontent.com/48644958/110317292-48f94700-804f-11eb-9747-926233f42b51.png" height="30%" width="30%"></img><br>
+<img src="https://user-images.githubusercontent.com/48644958/110317297-4ac30a80-804f-11eb-9521-3df903b2a982.png" height="30%" width="30%"></img><br>
 </div>
 
 - 금융결제원에서 받은 사용자 인증 Token을 회원가입시 DB에 저장시킵니다.<br>
 
 ### 메인 화면
 
-<img src="https://user-images.githubusercontent.com/48644958/110317302-4dbdfb00-804f-11eb-87b0-7475bb532925.png" height="40%" width="40%"></img>
+<img src="https://user-images.githubusercontent.com/48644958/110317302-4dbdfb00-804f-11eb-87b0-7475bb532925.png" height="30%" width="30%"></img><br>
 
 - 사용자가 등록한 통장 목록을 보여줍니다.<br>
 - 각 통장마다 QR 코드를 제공하며, 이를 리더기에 입력시 간편 결제가 가능합니다.<br>
 
 ### 잔액 조회
 
-<img src="https://user-images.githubusercontent.com/48644958/110317313-4f87be80-804f-11eb-8450-3ca4c052a9bd.png" height="40%" width="40%"></img>
+<img src="https://user-images.githubusercontent.com/48644958/110317313-4f87be80-804f-11eb-8450-3ca4c052a9bd.png" height="30%" width="30%"></img><br>
 
 - 통장의 잔액과 결제 내역을 보여줍니다.<br>
