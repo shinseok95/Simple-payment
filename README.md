@@ -48,9 +48,9 @@
 ### 회원가입
 
 <div>
-<img src="https://user-images.githubusercontent.com/48644958/110317292-48f94700-804f-11eb-9747-926233f42b51.png" height="30%" width="30%"></img><br>
-<img src="https://user-images.githubusercontent.com/48644958/110317297-4ac30a80-804f-11eb-9521-3df903b2a982.png" height="30%" width="30%"></img><br>
-</div>
+<img src="https://user-images.githubusercontent.com/48644958/110317292-48f94700-804f-11eb-9747-926233f42b51.png" height="30%" width="30%"></img>
+<img src="https://user-images.githubusercontent.com/48644958/110317297-4ac30a80-804f-11eb-9521-3df903b2a982.png" height="30%" width="30%"></img>
+</div><br>
 
 - 금융결제원에서 받은 사용자 인증 Token을 회원가입시 DB에 저장시킵니다.<br>
 
