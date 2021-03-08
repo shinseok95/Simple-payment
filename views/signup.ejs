@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0"
+    />
+    <title>회원가입</title>
+
+    <!-- Google font file. If you want you can change. -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawesome font file css -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+    <!-- Template global css file. Requared all pages -->
+    <link rel="stylesheet" type="text/css" href="css/global.style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="wrapper-inline">
+        <!-- Header area start -->
+        <header>
+          <!-- extra class no-background -->
+          <a class="go-back-link" href="javascript:history.back();"
+            ><i class="fa fa-arrow-left"></i
+          ></a>
+          <h1 class="page-title">회원가입</h1>
+        </header>
+        <!-- Header area end -->
+        <!-- Page content start -->
+        <main>
+          <div class="container">
+            <div class="form-row-group with-icons">
+              <div class="form-row no-padding">
+                <i class="fa fa-user"></i>
+                <input
+                  type="text"
+                  id="userName"
+                  class="form-element"
+                  placeholder="Username"
+                  value=""
+                />
+              </div>
+              <div class="form-row no-padding">
+                <i class="fa fa-envelope"></i>
+                <input
+                  type="email"
+                  id="userEmail"
+                  class="form-element"
+                  placeholder="Email"
+                  value=""
+                />
+              </div>
+              <div class="form-row no-padding">
+                <i class="fa fa-lock"></i>
+                <input
+                  type="password"
+                  id="userPassword"
+                  class="form-element"
+                  placeholder="Password"
+                  value=""
+                />
+              </div>
+              <div class="form-row no-padding">
+                <i class="fa fa-user"></i>
+                <input
+                  type="text"
+                  id="userAccessToken"
+                  class="form-element"
+                  placeholder="accessToken"
+                  value=""
+                />
+              </div>
+              <div class="form-row no-padding">
+                <i class="fa fa-user"></i>
+                <input
+                  type="text"
+                  id="userRefreshToken"
+                  class="form-element"
+                  placeholder="refreshToken"
+                  value=""
+                />
+              </div>
+              <div class="form-row no-padding">
+                <i class="fa fa-user"></i>
+                <input
+                  type="text"
+                  id="userSeqNo"
+                  class="form-element"
+                  placeholder="userseqno"
+                  value=""
+                />
+              </div>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <div class="form-row">
+              <button
+                type="button"
+                id="authBtn"
+                class="button circle block orange"
+              >
+                인증받기
+              </button>
+            </div>
+            <br />
+            <div class="form-row">
+              <button
+                type="button"
+                id="signupBtn"
+                class="button circle block orange"
+              >
+                가입하기
+              </button>
+            </div>
+
+            <div class="form-row txt-center mt-15">
+              Already have an account?
+              <a href="/login" data-loader="show">Login</a>
+            </div>
+          </div>
+        </main>
+        <!-- Page content end -->
+      </div>
+    </div>
+
+    <!--Page loader DOM Elements. Requared all pages-->
+    <div class="sweet-loader">
+      <div class="box">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+      </div>
+    </div>
+
+    <!-- JQuery library file. requared all pages -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- Template global script file. requared all pages -->
+    <script src="js/global.script.js"></script>
+    <script>
+      $("#authBtn").click(function () {
+
+        var apiKey = "3a9bbd90-813c-4f8f-9764-56521b741353"
+        //#자기 키로 변경
+        var tmpWindow = window.open("about:blank");
+        tmpWindow.location = "https://testapi.openbanking.or.kr/oauth/2.0/authorize?response_type=code&client_id="+apiKey+"&redirect_uri=http://localhost:3000/authResult&scope=login inquiry transfer&state=12345678901234567890123456789012&auth_type=0"
+
+      });
+      $("#signupBtn").click(function () {
+        //#signup Post 라우터에 데이터 전송!
+        var userName = $("#userName").val();
+        var userEmail = $("#userEmail").val();
+        var userPassword = $("#userPassword").val();
+        var userAccessToken = $("#userAccessToken").val();
+        var userRefreshToken = $("#userRefreshToken").val();
+        var userSeqNo = $("#userSeqNo").val();
+        $.ajax({
+          url: "/signup",
+          type: "POST",
+          data: {
+            userName : userName,
+            userEmail : userEmail,
+            userPassword : userPassword,
+            userAccessToken : userAccessToken,
+            userRefreshToken : userRefreshToken,
+            userSeqNo : userSeqNo,
+          },
+          success: function (data) {
+              if(data == "1"){
+                  alert('회원가입이 완료되었습니다!');
+                  window.location.href = "/login"
+              }
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
